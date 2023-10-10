@@ -5,7 +5,7 @@ public class Player {
     private List<Card> hand = new ArrayList<>();
 
     public void dealHand(Deck deck){
-        for( int i = 0; i < 4; i++){
+        for( int i = 0; i < 3; i++){
             Card card = deck.getRandomCard();
             hand.add(card);
         }
@@ -17,5 +17,10 @@ public class Player {
             System.out.print(card.rank + "-" + card.suite +"   ");
         });
         System.out.println();
+    }
+
+    public void drawCard(Deck deck){
+        Card card = deck.getRandomCard();
+        hand.add(card);
     }
 }

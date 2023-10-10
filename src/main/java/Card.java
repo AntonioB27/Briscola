@@ -40,4 +40,19 @@ public class Card {
     public void setRank(Ranks rank) {
         this.rank = rank;
     }
+
+    public int getStrenght(){
+        return switch (this.getRank()) {
+            case A -> 10;
+            case THREE -> 9;
+            case KING -> 8;
+            case QUEEN -> 7;
+            case FOOL -> 6;
+            case SEVEN -> 5;
+            case SIX -> 4;
+            case FIVE -> 3;
+            case FOUR -> 2;
+            case TWO -> 1;
+        };
+    }
 }

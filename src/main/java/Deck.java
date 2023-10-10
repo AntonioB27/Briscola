@@ -5,6 +5,8 @@ public class Deck extends Card {
 
     private List<Card> deck = new ArrayList<>();
 
+    private Card briscola = new Card();
+
     public Deck(){
         setDeck();
     }
@@ -31,11 +33,28 @@ public class Deck extends Card {
 
     public Card getRandomCard(){
         Random random = new Random();
-        int deck_size = deck.size();
-        int random_num = random.nextInt(deck_size - 1);
+        int random_num = random.nextInt(deck.size() - 1);
 
         Card card = deck.get(random_num);
         deck.remove(random_num);
         return card;
+    }
+
+    public void setBriscola(){
+        Random random = new Random();
+        int random_num = random.nextInt(deck.size() - 1);
+
+        Card card = deck.get(random_num);
+        deck.remove(card);
+        deck.add(deck.size(), card);
+        this.briscola = card;
+    }
+
+    public void printBriscola(){
+        System.out.println("BRISCOLA: " + briscola.getRank() + "-" + briscola.getSuite() );
+    }
+
+    public Card getBriscola() {
+        return briscola;
     }
 }
