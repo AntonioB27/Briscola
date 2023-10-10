@@ -9,7 +9,7 @@ public class GameLogic {
         return this.winConditionMet;
     }
 
-    public Card findStrongerCard(Card briscola, Card playerCard, Card botCard){
+    public static Card findStrongerCard(Card briscola, Card playerCard, Card botCard){
 
         Card winningCard = new Card();
 
@@ -25,4 +25,5 @@ public class GameLogic {
 
         return winningCard;
     }
+
 }

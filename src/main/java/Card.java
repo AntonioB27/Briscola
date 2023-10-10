@@ -55,4 +55,10 @@ public class Card {
             case TWO -> 1;
         };
     }
+
+    public static void printWinningCard(Card playerCard, Card botCard, Card winningCard){
+        System.out.println("PLAYER CARD: " + playerCard.getRank() + "-" + playerCard.getSuite());
+        System.out.println("BOT CARD: " + botCard.getRank() + "-" + botCard.getSuite());
+        System.out.println("WINNING CARD: " + winningCard.getRank() + "-" + winningCard.getSuite());
+    }
 }
