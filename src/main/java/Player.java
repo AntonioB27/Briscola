@@ -5,6 +5,37 @@ import java.util.Scanner;
 
 public class Player {
     private List<Card> hand = new ArrayList<>();
+    private List<Card> wonCards = new ArrayList<>();
+
+    public List<Card> getHand() {
+        return hand;
+    }
+
+    public int getPoints() {
+        return points;
+    }
+
+    private int points;
+
+    public void addWonCards(Card card1, Card card2){
+        wonCards.add(card1);
+        wonCards.add(card2);
+    }
+
+    public void addPoints(Card card1, Card card2){
+        this.points = points + pointCalculator(card1) + pointCalculator(card2);
+    }
+
+    private int pointCalculator(Card card){
+        return switch (card.getRank()) {
+            case A -> 11;
+            case THREE -> 10;
+            case KING -> 4;
+            case QUEEN -> 3;
+            case FOOL -> 2;
+            case SEVEN, SIX, FIVE, FOUR, TWO -> 0;
+        };
+    }
 
     public void dealHand(Deck deck){
         for( int i = 0; i < 3; i++){

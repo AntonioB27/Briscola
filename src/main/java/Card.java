@@ -56,9 +56,14 @@ public class Card {
         };
     }
 
-    public static void printWinningCard(Card playerCard, Card botCard, Card winningCard){
+    public static void printWinningCard(Card playerCard, Card botCard, Card winningCard) throws InterruptedException {
+        Thread.sleep(1000);
         System.out.println("PLAYER CARD: " + playerCard.getRank() + "-" + playerCard.getSuite());
+        Thread.sleep(1000);
         System.out.println("BOT CARD: " + botCard.getRank() + "-" + botCard.getSuite());
+        Thread.sleep(1000);
         System.out.println("WINNING CARD: " + winningCard.getRank() + "-" + winningCard.getSuite());
+        System.out.println();
+        Thread.sleep(1000);
     }
 }

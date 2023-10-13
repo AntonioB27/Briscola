@@ -33,8 +33,12 @@ public class Deck extends Card {
 
     public Card getRandomCard(){
         Random random = new Random();
-        int random_num = random.nextInt(deck.size() - 1);
-
+        int random_num;
+        if(deck.size() > 2) {
+            random_num = random.nextInt(deck.size() - 2);
+        } else {
+            random_num = 0;
+        }
         Card card = deck.get(random_num);
         deck.remove(random_num);
         return card;
@@ -56,5 +60,9 @@ public class Deck extends Card {
 
     public Card getBriscola() {
         return briscola;
+    }
+
+    public int size(){
+        return this.deck.size();
     }
 }
