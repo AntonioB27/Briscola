@@ -1,9 +1,13 @@
-import java.lang.reflect.Array;
-import java.util.*;
+import lombok.Getter;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+@Getter
 public class Deck extends Card {
 
-    private List<Card> deck = new ArrayList<>();
+    private final List<Card> deck = new ArrayList<>();
 
     private Card briscola = new Card();
 
@@ -12,10 +16,9 @@ public class Deck extends Card {
     }
 
     public void setDeck() {
-        int i = 0;
         for(Suites suite : Suites.values()){
             for(Ranks rank : Ranks.values()){
-                deck.add(new Card(rank, suite));
+                deck.add(new Card(suite, rank));
             }
         }
     }
@@ -25,10 +28,6 @@ public class Deck extends Card {
         for ( var card: deck) {
             System.out.println(card.getRank().toString() + ", " + card.getSuite().toString());
         }
-    }
-
-    public List<Card> getDeck(){
-        return this.deck;
     }
 
     public Card getRandomCard(){
@@ -56,10 +55,6 @@ public class Deck extends Card {
 
     public void printBriscola(){
         System.out.println("BRISCOLA: " + briscola.getRank() + "-" + briscola.getSuite() );
-    }
-
-    public Card getBriscola() {
-        return briscola;
     }
 
     public int size(){

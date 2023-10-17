@@ -1,5 +1,14 @@
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.util.Map;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Card {
 
     public enum Suites {
@@ -12,34 +21,6 @@ public class Card {
 
     protected Suites suite;
     protected Ranks rank;
-
-    public Card(){}
-
-    public Card(Ranks rank, Suites suite){
-        this.suite = suite;
-        this.rank = rank;
-    }
-
-    public void setCard(Ranks rank, Suites suite){
-            this.suite = suite;
-            this.rank = rank;
-    }
-
-    public Suites getSuite() {
-        return suite;
-    }
-
-    public void setSuite(Suites suite) {
-        this.suite = suite;
-    }
-
-    public Ranks getRank() {
-        return rank;
-    }
-
-    public void setRank(Ranks rank) {
-        this.rank = rank;
-    }
 
     public int getStrenght(){
         return switch (this.getRank()) {

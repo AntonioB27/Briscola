@@ -1,6 +1,5 @@
 public class Game {
     public static void main(String[] args) throws InterruptedException {
-        GameLogic gl = new GameLogic();
         Deck deck = new Deck();
         Player player1 = new Player();
         Player bot = new Player();
